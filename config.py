@@ -7,10 +7,10 @@ load_dotenv()
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Obter as variáveis de ambiente
-DB_HOST = os.getenv('DB_HOST', 'localhost')
-DB_NAME = os.getenv('DB_NAME', 'dbname')
-DB_USER = os.getenv('DB_USER', 'username')
-DB_PASS = os.getenv('DB_PASS', 'password')
+DB_HOST = os.getenv('DB_HOST', 'database-1.cdcogkfzajf0.us-east-1.rds.amazonaws.com')
+DB_NAME = os.getenv('DB_NAME', 'postgres')
+DB_USER = os.getenv('DB_USER', 'postgres')
+DB_PASS = os.getenv('DB_PASS', '15512332')
 
 class Config:
     # Configuração do banco de dados PostgreSQL

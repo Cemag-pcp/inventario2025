@@ -5,11 +5,11 @@ from app.models import Local, Peca  # Ajuste o import conforme a estrutura da su
 from app.management.lista_lideres import carregar_lideres
 
 # Criação do diretório de saída
-output_dir = "listas_geradas"
+output_dir = "listas_geradas_2025"
 os.makedirs(output_dir, exist_ok=True)
 
 # Caminho para o arquivo modelo
-template_path = "excel_dados_inventario/Lista - Inventário 2024.xlsx"
+template_path = "excel_dados_inventario/Lista - Inventário 2025.xlsx"
 
 def generate_inventory_lists():
     # Agrupando locais por (nome, almoxarifado)
