@@ -16,7 +16,7 @@ def local(local_nome,almoxarifado):
     # Filtrando estante no local especificado
     query_estantes = text('''
         SELECT DISTINCT estante
-        FROM inventario_2024.locais
+        FROM inventario_2025.locais
         WHERE nome = :local_nome
         ORDER by estante             
     ''')
@@ -26,9 +26,9 @@ def local(local_nome,almoxarifado):
     # Consultando as peças diretamente com SQL puro
     query_pecas = text('''
         SELECT peca.id, peca.codigo, peca.descricao, peca.local_id, local.estante
-        FROM inventario_2024.pecas AS peca
-        JOIN inventario_2024.locais AS local ON peca.local_id = local.id
-        LEFT JOIN inventario_2024.quantidades AS quant ON peca.id = quant.peca_id
+        FROM inventario_2025.pecas AS peca
+        JOIN inventario_2025.locais AS local ON peca.local_id = local.id
+        LEFT JOIN inventario_2025.quantidades AS quant ON peca.id = quant.peca_id
         WHERE local.nome = :local_nome and almoxarifado = :almoxarifado
         AND quant.id IS NULL
         AND peca.peca_fora_lista = FALSE

@@ -32,7 +32,7 @@ def carregar_dados_csv(caminho_csv):
                 
                 # Verificar se o Local já existe
                 local_query = text("""
-                    SELECT id FROM inventario_2024.locais WHERE nome = :nome AND estante = :estante AND almoxarifado = :almoxarifado
+                    SELECT id FROM inventario_2025.locais WHERE nome = :nome AND estante = :estante AND almoxarifado = :almoxarifado
                 """)
                 local_result = connection.execute(local_query, {
                     'nome': local_nome,
@@ -42,7 +42,7 @@ def carregar_dados_csv(caminho_csv):
 
                 if local_result is None:
                     local_insert = text("""
-                        INSERT INTO inventario_2024.locais (nome, estante, almoxarifado) 
+                        INSERT INTO inventario_2025.locais (nome, estante, almoxarifado) 
                         VALUES (:nome, :estante, :almoxarifado)
                         RETURNING id
                     """)
@@ -69,7 +69,7 @@ def carregar_dados_csv(caminho_csv):
 
                 # Verificar se a peça já existe
                 peca_query = text("""
-                    SELECT id FROM inventario_2024.pecas WHERE codigo = :codigo AND local_id = :local_id
+                    SELECT id FROM inventario_2025.pecas WHERE codigo = :codigo AND local_id = :local_id
                 """)
                 peca_result = connection.execute(peca_query, {
                     'codigo': codigo,
@@ -81,7 +81,7 @@ def carregar_dados_csv(caminho_csv):
                     continue  # Ignorar e passar para a próxima linha
 
                 peca_insert = text("""
-                    INSERT INTO inventario_2024.pecas (codigo, descricao, local_id, quantidade_sistema, peca_fora_lista)
+                    INSERT INTO inventario_2025.pecas (codigo, descricao, local_id, quantidade_sistema, peca_fora_lista)
                     VALUES (:codigo, :descricao, :local_id, :quantidade_sistema, :peca_fora_lista)
                 """)
                 connection.execute(peca_insert, {

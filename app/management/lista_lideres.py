@@ -31,12 +31,13 @@ import pandas as pd
 #     {"Almoxarifado": "Central", "Setor": "AL01 - ACESS", "Líder": "MAYLSON"},
 # ]
 
-planilha_lideres_path = "app/planilha_para_lideres/PLANILHA DE CONTROLE 2024.xlsx"
+planilha_lideres_path = "app/planilha_para_lideres/2025.csv"
 
 # Função para carregar os dados da planilha de líderes
 def carregar_lideres(almoxarifado, setor):
     # Lê a planilha Excel para um DataFrame
-    df = pd.read_excel(planilha_lideres_path)
+    # df = pd.read_excel(planilha_lideres_path)
+    df = pd.read_csv(planilha_lideres_path)
 
     df = df[df['ID LISTA'].notna()]  # Remove NaN
     df = df[df['ID LISTA'] != ""]  # Remove valores vazios

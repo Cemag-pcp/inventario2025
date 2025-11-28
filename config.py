@@ -16,4 +16,4 @@ class Config:
     # Configuração do banco de dados PostgreSQL
     SQLALCHEMY_DATABASE_URI = f'postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_SCHEMA = 'inventario_2024'  # Definindo o schema do banco de dados
+    SQLALCHEMY_SCHEMA = 'inventario_2025'  # Definindo o schema do banco de dados
