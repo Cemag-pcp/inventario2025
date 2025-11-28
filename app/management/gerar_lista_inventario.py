@@ -9,7 +9,7 @@ output_dir = "listas_geradas_2025"
 os.makedirs(output_dir, exist_ok=True)
 
 # Caminho para o arquivo modelo
-template_path = "excel_dados_inventario/Lista - Inventário 2025.xlsx"
+template_path = "excel_dados_inventario/Lista - Inventário 2025.2.xlsx"
 
 def generate_inventory_lists():
     # Agrupando locais por (nome, almoxarifado)

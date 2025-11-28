@@ -9,7 +9,7 @@ from app import create_app
 from app.management.planilha_dados_inventario import carregar_dados_csv
 
 app = create_app()
-caminho = r"excel_dados_inventario\MAPEAMENTO_ALMOX_CARPINTARIA.csv"
+caminho = r"excel_dados_inventario\MAPEAMENTO_MONT_CARRETAS2.csv"
 
 with app.app_context():
     carregar_dados_csv(caminho)
